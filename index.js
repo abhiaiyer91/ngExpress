@@ -2,7 +2,7 @@ var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
 var express = require('express'),
     bodyParser = require('body-parser'),
-	port = 3000;
+	port = process.env.PORT || 5000;
 var app = express();
 
 MongoClient.connect('mongodb://localhost:27017/express-test', function (err, db) {
@@ -62,8 +62,8 @@ MongoClient.connect('mongodb://localhost:27017/express-test', function (err, db)
 		});
 	}
 
-	app.listen(port, function () {
-		console.log('listening on port ' + port);
+	app.listen(port, function() {
+	    console.log("Listening on " + port);
 	});
 });
 
