@@ -3,4 +3,6 @@
 In 1st window | In 2nd window
 ---|---
 `mongod`| `npm install`
-        | `node index.js`  
+        | `node index.js`
+
+Open browser to http://localhost:3000/  
