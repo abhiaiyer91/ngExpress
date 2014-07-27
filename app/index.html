@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>ngExpress</title>
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+   <script src="app.js"></script>
+   <script src="expressCtrl.js"></script>
+</head>
+<body ng-app="ngExpress">
+   <div class="container" ng-controller="expressCtrl">
+      <div class="row">
+         <br><br><br><br>
+   		<div class="col-sm-3"></div>
+   		<div class="col-sm-6 text-center">
+   			<div class="jumbotron">
+   				<h3>Shopping List</h3>
+               <input type="text" ng-model="item.text"><br><br>
+               <a ng-hide="updating" ng-click="add()" class="btn btn-primary">Add</a>
+               <a ng-show="updating" ng-click="edit()" class="btn btn-warning">Edit</a>
+               <a ng-click="cancel()" class="btn btn-danger">Cancel</a>
+               <br><br>
+   				<div ng-repeat="item in items">
+                  <div class="row">
+                     <div class="col-sm-2">
+                        <i style="color:red;" ng-click="check(item)" class="fa fa-check"></i>
+                     </div>
+                     <div class="col-sm-10">
+                        <p class="text-left" ng-click="update(item.text, item._id)">{{item.text}}</p>
+                     </div>
+                  </div>
+               </div>
+   			</div>
+   		</div>
+   		<div class="col-sm-3"></div>
+      </div>
+   </div>
+</body>
+</html>
