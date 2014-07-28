@@ -5,12 +5,12 @@ var express = require('express'),
 	port = process.env.PORT || 5000;
 var app = express();
 
-var mongo = 'mongodb://localhost:27017/express-test';
-app.configure('production', function() {
-	mongo = 'mongodb://rphansen91:1Onemile@ds053429.mongolab.com:53429/ng-express-list';
-});
+// var mongo = 'mongodb://localhost:27017/express-test';
+// app.configure('production', function() {
+// 	mongo = 'mongodb://rphansen91:1Onemile@ds053429.mongolab.com:53429/ng-express-list';
+// });
 
-MongoClient.connect(mongo, function (err, db) {
+MongoClient.connect('mongodb://rphansen91:1Onemile@ds053429.mongolab.com:53429/ng-express-list', function (err, db) {
 	if (err) throw err;
 	var list = db.collection('list');
 
